@@ -1,9 +1,9 @@
-# Should I stay or should I go? Adaption of human observers to the volatility of visual inputs
+# Should I stay or should I go? Humans adapt to the volatility of visual motion properties, and know about it
 
 * What:: talk @ [conference](conference_url)
 * Who:: Perrinet, Laurent U
 * Where: Marseille (France), see https://laurentperrinet.github.io/talk/2019-05-23-neurofrance
-* When: 23/05/2019, time: 15:45:00-16:30:00
+* When: 23/05/2019, time: 11:00:00-1:30:00
 
 * What:
   * Slides @ https://laurentperrinet.github.io/2019-05-23_Neurofrance
