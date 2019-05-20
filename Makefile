@@ -1,6 +1,6 @@
 default: github
 
-SRC=2019-04-05_BBCP_causal_kickoff
+SRC=2019-05-23_Neurofrance
 
 edit:
 	atom $(SRC).py
