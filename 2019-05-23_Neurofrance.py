@@ -282,17 +282,19 @@ seq = -1 + 2 * (np.random.rand(N_seq)<.75)
 figname = os.path.join(figpath_talk, figname)
 if not os.path.isfile(figname): create_movie(seq, figname=figname)
 
-s.add_slide(content="""
-    <video loop="1" autoplay="1" controls width=99%/>
-      <source type="video/mp4" src="{}">
-    </video>
-    <BR>
-    """.format(figname), # s.embed_video(figname)),
+s.add_slide(video_fname=figname,
+# s.add_slide(content="""
+#     <video loop="1" autoplay="1" controls width=99%/>
+#       <source type="video/mp4" src="{}">
+#     </video>
+#     <BR>
+#     """.format(figname), # s.embed_video(figname)),
 notes="""
 
 * block 75% to the right
 
 """)
+
 
 title = meta['sections'][i_section]
 
@@ -521,7 +523,7 @@ which qualitatively confirms such an intuition...
 
 """)
 
-for txt in ['P_real']:#, 'p_bet--v_a']: # TODO : make a sequence to uncover parts
+for txt in ['scatter_velocity_sigmo_real']:#, 'p_bet--v_a']: # TODO : make a sequence to uncover parts
     s.add_slide(content=s.content_figures(
 [os.path.join(figpath_talk, txt + '.png')],
             title=title, height=s.meta['height']*.75) + url,
@@ -562,7 +564,7 @@ Indeed, such a model already exists, the onlin BCP, and we will adapt it for our
 
 s.add_slide(content=s.content_figures(
 [os.path.join(figpath_talk, 'Experiment_block_0.png')],
-        title=title + ' - Switching model', height=s.meta['height']*.825) + url,
+        title=title + ' - Switching model', height=s.meta['height']*.825),# + url,
 notes="""
 Let's remember our hierarchical generative model.
 
@@ -602,14 +604,13 @@ URL = "http://arxiv.org/abs/0710.3742"
 
 * full code @ https://github.com/laurentperrinet/bayesianchangepoint
 
-""", notes='', md=True)
+""", notes='<br><a href="http://arxiv.org/abs/0710.3742">Adams &amp; MacKay 2007 "Bayesian Online Changepoint Detection</a>', md=True)
 
 tag = 'bcp_model_layer_' #  'model_bcp_'
 blobs = ["""
 Initialize $P(r_0=0)=1$ and  $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
 ""","""
 Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
-<br><a href="http://arxiv.org/abs/0710.3742">Adams &amp; MacKay 2007 "Bayesian Online Changepoint Detection</a>
 ""","""
 Evaluate (likelihood) Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
 <br>

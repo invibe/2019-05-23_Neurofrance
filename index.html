@@ -114,12 +114,7 @@ https://laurentperrinet.github.io/talk/2019-04-05-bbcp-causal-kickoff/</p>
                 </aside>
                 
 </section>
-        <section>
-    <video loop="1" autoplay="1" controls width=99%/>
-      <source type="video/mp4" src="figures/block75.mp4">
-    </video>
-    <BR>
-    
+        <section data-background-video="figures/block75.mp4">
                 <aside class="notes">
                  <ul>
 <li>block 75% to the right</li>
@@ -553,7 +548,7 @@ https://laurentperrinet.github.io/talk/2019-04-05-bbcp-causal-kickoff/</p>
             
                 <td height=750 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
                 <p>
-                    <img class="plain" data-src="figures/P_real.png"  height="750px"   />
+                    <img class="plain" data-src="figures/scatter_velocity_sigmo_real.png"  height="750px"   />
                 </p>
                 </td>
                 
@@ -641,7 +636,7 @@ https://laurentperrinet.github.io/talk/2019-04-05-bbcp-causal-kickoff/</p>
             
         </table>
         </div>
-        full code @ <a href="https://github.com/chloepasturel/AnticipatorySPEM">github.com/chloepasturel/AnticipatorySPEM</a>
+        
                 <aside class="notes">
                  <p>Let's remember our hierarchical generative model.</p>
 <p>At any given trial, we wish to construct an algorithm which</p>
@@ -683,6 +678,10 @@ URL = "http://arxiv.org/abs/0710.3742"
 
 </script>
             
+                <aside class="notes">
+                 <p><br><a href="http://arxiv.org/abs/0710.3742">Adams &amp; MacKay 2007 "Bayesian Online Changepoint Detection</a></p>
+                </aside>
+                
 </section>
         <section><h3>Results:The Bayesian Changepoint Detector</h3>
             <div align="center">
@@ -732,7 +731,6 @@ First, we initialize the first node to prior values</li>
         </div>
         
 Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
-<br><a href="http://arxiv.org/abs/0710.3742">Adams &amp; MacKay 2007 "Bayesian Online Changepoint Detection</a>
 
                 <aside class="notes">
                  
