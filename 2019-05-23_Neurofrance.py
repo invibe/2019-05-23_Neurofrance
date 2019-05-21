@@ -382,7 +382,7 @@ notes="""
 
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0.png')],
+[os.path.join(figpath_talk, 'Experiment_block_0.svg')],
         title=title + ' - Switching model', height=s.meta['height']*.825),
 notes="""
 
@@ -420,7 +420,7 @@ Indeed, such a model already exists, the onlin BCP, and we will adapt it for our
 url =  'full code @ <a href="https://github.com/chloepasturel/AnticipatorySPEM">github.com/chloepasturel/AnticipatorySPEM</a>'
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0.png')],
+[os.path.join(figpath_talk, 'Experiment_block_0.svg')],
         title=title + ' - Switching model', height=s.meta['height']*.825) + url,
 notes="""
 
@@ -452,7 +452,7 @@ We called this experiment the bet experiment.
 """)
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0_bet.png')],
+[os.path.join(figpath_talk, 'Experiment_block_0_bet.svg')],
         title=title + ' - Rating scale', height=s.meta['height']*.825) + url,
 notes="""
 First, we overlay the results of the bet result for one of the 12 subjects
@@ -482,7 +482,7 @@ Let's now have a look at EMs...
 
 for txt in ['raw_trace', 'raw_fitted']: # 'raw_fit',
     s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, txt + '.png')],
+[os.path.join(figpath_talk, txt + '.svg')],
             title=title + ' - Fitting eye movements', height=s.meta['height']*.825) + url,
    notes="""
 
@@ -499,7 +499,7 @@ While being sensible to recording errors, this allows us to extract the anticipa
 """)
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0_EM.png')],
+[os.path.join(figpath_talk, 'Experiment_block_0_EM.svg')],
         title=title + ' - Eye Movements', height=s.meta['height']*.825) + url,
 notes="""
 
@@ -514,7 +514,7 @@ notes="""
 """)
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0_bet_EM.png')],
+[os.path.join(figpath_talk, 'Experiment_block_0_bet_EM.svg')],
         title=title + ' - Behaviour', height=s.meta['height']*.825) + url,
 notes="""
 
@@ -526,7 +526,7 @@ which qualitatively confirms such an intuition...
 
 for txt in ['scatter_velocity_sigmo_real']:#, 'p_bet--v_a']: # TODO : make a sequence to uncover parts
     s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, txt + '.png')],
+[os.path.join(figpath_talk, txt + '.svg')],
             title=title, height=s.meta['height']*.75) + url,
    notes="""
 * quantitatively, one can now plot the results for all subjects
@@ -564,7 +564,7 @@ Indeed, such a model already exists, the onlin BCP, and we will adapt it for our
 
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0.png')],
+[os.path.join(figpath_talk, 'Experiment_block_0.svg')],
         title=title + ' - Switching model', height=s.meta['height']*.825),# + url,
 notes="""
 Let's remember our hierarchical generative model.
@@ -812,17 +812,15 @@ notes="""
 # """)
 
 
-
-s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'BCP_mean.svg')],
-        title=title + ' - Compiling results', height=s.meta['height']*.825),
-notes="""
-
-
-
-""")
+for fname in ['BCP_mean']:
+    s.add_slide(content=s.content_figures(
+    [os.path.join(figpath_talk, fname + '.svg')],
+            title=title + ' - Compiling results', height=s.meta['height']*.825),
+    notes="""
 
 
+
+    """)
 
 
 s.close_section()
@@ -907,7 +905,7 @@ tag = 'KDE'
 for mode, mode_txt in zip(['fixed', 'mean_fixed'], [' - Fixed window', ' - Full model']):
 # for mode in ['fixed', 'expectation']: #, 'max', modes: #
     s.add_slide(content=s.content_figures(
-        [os.path.join(figpath_talk, tag + '_' +  session + '_' + mode + '.png') for session in ['bet', 'velo']],
+        [os.path.join(figpath_talk, tag + '_' +  session + '_' + mode + '.svg') for session in ['bet', 'velo']],
                 title=title + mode_txt, height=s.meta['height']*.7, transpose=False, fragment=False),
        notes="""
 we therefore used a kernel density estimation which clearly show the relationship between the agent probability and that reported by human observers

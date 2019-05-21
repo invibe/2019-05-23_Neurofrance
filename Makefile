@@ -15,6 +15,9 @@ page:
 	# academic ...
 
 get_figures:
+	rsync -a ../PasturelMontagniniPerrinet2019/figures/Experiment/{1_B_protocol_recording,1_C_protocol_bet}.png figures
+	rsync -a ../AnticipatorySPEM/figures/Experiment/{Experiment_classique_4_blocks,Experiment_block_0,Experiment_block_0_EM,Experiment_block_0_bet,Experiment_block_0_bet_EM}.svg figures
+	rsync -a ../AnticipatorySPEM/figures/raw/{raw_trace,raw_fitted}.svg figures
 	rsync -a ../AnticipatorySPEM/figures/Result/{Results_BCP_velocity_sigmo_*,kde_mean_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_mean}.svg figures
 
 show: html
