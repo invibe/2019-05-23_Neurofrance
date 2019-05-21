@@ -22,6 +22,7 @@ show: html
 	open /Applications/Safari.app/Contents/MacOS/Safari  index.html
 
 github: html
+	git add figures
 	git commit --dry-run -am 'Test' | grep -q -v 'nothing to commit' && git commit -am' updating slides'
 	git push
 	# open https://invibe.github.io/$(SRC)
