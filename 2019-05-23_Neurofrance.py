@@ -299,7 +299,7 @@ notes="""
 title = meta['sections'][i_section]
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_classique_4_blocks.png')],
+[os.path.join(figpath_talk, 'Experiment_classique_4_blocks.svg')],
         title=title + ' - Probability bias', height=s.meta['height']*.825),
 notes="""
 
