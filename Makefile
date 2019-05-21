@@ -21,7 +21,7 @@ get_figures:
 	rsync -a ../AnticipatorySPEM/figures/Experiment/{Experiment_classique_4_blocks,Experiment_block_0,Experiment_block_0_EM,Experiment_block_0_bet,Experiment_block_0_bet_EM}.svg figures
 	rsync -a ../AnticipatorySPEM/figures/raw/{raw_trace,raw_fitted}.svg figures
 	# methods
-	rsync -a ../AnticipatorySPEM/figures/Result/{Results_BCP_velocity_sigmo_*,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_mean}.svg figures
+	rsync -a ../AnticipatorySPEM/figures/Result/{Results_BCP_velocity_sigmo_0,Results_BCP_velocity_sigmo_1,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_mean}.svg figures
 	# KDE
 	rsync -a ../AnticipatorySPEM/figures/BCP/KDE_{bet_mean_fixed,bet_fixed,velo_mean_fixed,velo_fixed}.svg figures
 	rsync -a ../AnticipatorySPEM/figures/BCP/{BCP_mean,BCP_mean_0}.svg figures
