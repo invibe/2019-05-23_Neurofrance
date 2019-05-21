@@ -14,6 +14,9 @@ page:
 	#atom ~/pool/blog/perrinet_curriculum-vitae_tex/LaurentPerrinet_Presentations.bib
 	# academic ...
 
+figures:
+	cp ../AnticipatorySPEM/figures/Result/scatter_velocity_sigmo_*.svg figures
+
 show: html
 #	open -a firefox $(SRC).html
 	open /Applications/Safari.app/Contents/MacOS/Safari  index.html
