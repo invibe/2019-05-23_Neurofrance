@@ -15,10 +15,14 @@ page:
 	# academic ...
 
 get_figures:
-	rsync -a ../PasturelMontagniniPerrinet2019/figures/Experiment/{1_B_protocol_recording,1_C_protocol_bet}.png figures
+	# from the paper
+	rsync -a ../PasturelMontagniniPerrinet2019/figures/{1_B_protocol_recording,1_C_protocol_bet}.png figures
+	# methods
 	rsync -a ../AnticipatorySPEM/figures/Experiment/{Experiment_classique_4_blocks,Experiment_block_0,Experiment_block_0_EM,Experiment_block_0_bet,Experiment_block_0_bet_EM}.svg figures
 	rsync -a ../AnticipatorySPEM/figures/raw/{raw_trace,raw_fitted}.svg figures
 	rsync -a ../AnticipatorySPEM/figures/Result/{Results_BCP_velocity_sigmo_*,kde_mean_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_mean}.svg figures
+	# KDE
+	rsync -a ../AnticipatorySPEM/figures/BCP/KDE_{bet_mean_fixed,bet_fixed,velo_mean_fixed,velo_fixed}.svg figures
 
 show: html
 #	open -a firefox $(SRC).html
