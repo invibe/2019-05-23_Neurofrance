@@ -32,7 +32,7 @@ height_px = 80
 height_ratio = .7
 
 meta = dict(
- embed = True,
+ embed = False,
  draft = DEBUG, # show notes etc
  width= 1600,
  height= 1000,
@@ -237,7 +237,7 @@ def create_movie(seq, T=.5, radius=1/64, fps=50, W=1000, H=600, figname='sequenc
 #       <source type="video/mp4" src="{}">
 #     </video>
 #     <BR>
-#     """.format(s.embed_video(figname)),
+#     """.format(figname), # s.embed_video(figname)),
 # notes="""
 #
 #
@@ -256,7 +256,7 @@ s.add_slide(content="""
       <source type="video/mp4" src="{}">
     </video>
     <BR>
-    """.format(s.embed_video(figname)),
+    """.format(figname), # s.embed_video(figname)),
 notes="""
 
 * typically tested with a regular sequence
@@ -280,7 +280,7 @@ s.add_slide(content="""
       <source type="video/mp4" src="{}">
     </video>
     <BR>
-    """.format(s.embed_video(figname)),
+    """.format(figname), # s.embed_video(figname)),
 notes="""
 
 * block 75% to the right
@@ -363,7 +363,7 @@ s.add_slide(content="""
       <source type="video/mp4" src="{}">
     </video>
     <BR>
-    """.format(s.embed_video(figname)),
+    """.format(figname), # s.embed_video(figname)),
 notes="""
 
 * random block first half 75% to the right, then symetric
