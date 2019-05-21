@@ -936,9 +936,18 @@ notes="""
 
 """)
 
+tag = 'Results_BCP_velocity_sigmo'
+for txt in [str(i) for i in range(2)]:# [6, 10, 5, 2]]:
+    s.add_slide(content=s.content_figures(
+        [os.path.join(figpath_talk, tag + '_' + txt + '.svg')],
+                title=title, height=s.meta['height']*.825),
+       notes="""
+    """)
+
+
 s.add_slide(content=s.content_figures(
     [os.path.join(figpath_talk, '5_inter-individual_differences_fit.png')],
-            title=title + 'interindividual differences', height=s.meta['height']*.85, transpose=False, fragment=True),
+            title=title, height=s.meta['height']*.85, transpose=False, fragment=True),
    notes="""
 
 - interindividual differences

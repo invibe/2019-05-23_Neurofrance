@@ -16,7 +16,8 @@ page:
 
 get_figures:
 	# from the paper
-	rsync -a ../PasturelMontagniniPerrinet2019/figures/{1_B_protocol_recording,1_C_protocol_bet}.svg figures
+	rsync -a ../AnticipatorySPEM/figures/protocol/{1_B_protocol_recording,1_C_protocol_bet}.svg figures
+	# rsync -a ../PasturelMontagniniPerrinet2019/figures/{1_B_protocol_recording,1_C_protocol_bet}.svg figures
 	# methods
 	rsync -a ../AnticipatorySPEM/figures/Experiment/{Experiment_classique_4_blocks,Experiment_block_0,Experiment_block_0_EM,Experiment_block_0_bet,Experiment_block_0_bet_EM}.svg figures
 	rsync -a ../AnticipatorySPEM/figures/raw/{raw_trace,raw_fitted}.svg figures
