@@ -257,13 +257,13 @@ seq = -1 + 2 * (np.random.rand(N_seq)>.5)
 figname = os.path.join(figpath_talk, figname)
 if not os.path.isfile(figname): create_movie(seq, figname=figname)
 
-
-s.add_slide(content="""
-    <video loop="1" autoplay="1" controls width=99%/>
-      <source type="video/mp4" src="{}">
-    </video>
-    <BR>
-    """.format(figname), # s.embed_video(figname)),
+s.add_slide(video_fname=figname,
+# s.add_slide(content="""
+#     <video loop="1" autoplay="1" controls width=99%/>
+#       <source type="video/mp4" src="{}">
+#     </video>
+#     <BR>
+#     """.format(figname), # s.embed_video(figname)),
 notes="""
 
 * typically tested with a regular sequence
@@ -367,12 +367,13 @@ figname = os.path.join(figpath_talk, figname)
 if not os.path.isfile(figname): create_movie(seq, figname=figname)
 
 
-s.add_slide(content="""
-    <video loop="1" autoplay="1" controls width=99%/>
-      <source type="video/mp4" src="{}">
-    </video>
-    <BR>
-    """.format(figname), # s.embed_video(figname)),
+s.add_slide(video_fname=figname,
+# s.add_slide(content="""
+#     <video loop="1" autoplay="1" controls width=99%/>
+#       <source type="video/mp4" src="{}">
+#     </video>
+#     <BR>
+#     """.format(figname), # s.embed_video(figname)),
 notes="""
 
 * random block first half 75% to the right, then symetric
