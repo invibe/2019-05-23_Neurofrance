@@ -14,8 +14,8 @@ page:
 	#atom ~/pool/blog/perrinet_curriculum-vitae_tex/LaurentPerrinet_Presentations.bib
 	# academic ...
 
-figures:
-	cp ../AnticipatorySPEM/figures/Result/scatter_velocity_sigmo_*.svg figures
+get_figures:
+	rsync -a ../AnticipatorySPEM/figures/Result/{kde_mean_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_mean}.svg figures
 
 show: html
 #	open -a firefox $(SRC).html
