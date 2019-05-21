@@ -15,7 +15,7 @@ page:
 	# academic ...
 
 get_figures:
-	rsync -a ../AnticipatorySPEM/figures/Result/{kde_mean_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_mean}.svg figures
+	rsync -a ../AnticipatorySPEM/figures/Result/{Results_BCP_velocity_sigmo_*,kde_mean_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_fixed,scatter_velocity_sigmo_mean}.svg figures
 
 show: html
 #	open -a firefox $(SRC).html

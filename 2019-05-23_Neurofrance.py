@@ -602,7 +602,7 @@ blobs = ["""
 Initialize $P(r_0=0)=1$ and  $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
 ""","""
 Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
-<br<a href="http://arxiv.org/abs/0710.3742"Adams &amp; MacKay 2007 "Bayesian Online Changepoint Detection</a>
+<br><a href="http://arxiv.org/abs/0710.3742"Adams &amp; MacKay 2007 "Bayesian Online Changepoint Detection</a>
 ""","""
 Evaluate (likelihood) Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
 <br>
@@ -863,9 +863,10 @@ notes="""
 
 tag = 'Results_BCP_position'
 tag = 'Results_BCP_velocity'
+tag = 'Results_BCP_velocity_sigmo'
 for txt in [str(i) for i in range(2)]:# [6, 10, 5, 2]]:
     s.add_slide(content=s.content_figures(
-        [os.path.join(figpath_talk, tag + '_' + txt + '.png')],
+        [os.path.join(figpath_talk, tag + '_' + txt + '.svg')],
                 title=title +  ' - fit with BCP', height=s.meta['height']*.825),
        notes="""
 Among our 12 subjects, we show four representative examples. we will use the same figure as in the section with raw results
@@ -898,7 +899,7 @@ for mode, mode_txt in zip(['fixed', 'mean_fixed'], [' - Fixed window', ' - Full 
 # for mode in ['fixed', 'expectation']: #, 'max', modes: #
     s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, tag + '_' +  session + '_' + mode + '.png') for session in ['bet', 'velo']],
-                title=title + mode_txt, height=s.meta['height']*.7, transpose=False, fragment=True),
+                title=title + mode_txt, height=s.meta['height']*.7, transpose=False, fragment=False),
        notes="""
 we therefore used a kernel density estimation which clearly show the relationship between the agent probability and that reported by human observers
 - on the right, we
@@ -910,10 +911,6 @@ to summarize, we have shown that
 
 the brain is not strongly a bayesian machine, but weakly
 
-
-KDE_bet_mean_fixed
-
-KDE_velo_mean_fixed
 
     """)
 
