@@ -311,7 +311,7 @@ notes="""
 bib =  'Montagnini A, Souto D, and Masson GS (2010) <a href="http://jov.arvojournals.org/article.aspx?articleid=2138664">J Vis (VSS Abstracts) 10(7):554</a>,<BR> Montagnini A, Perrinet L, and Masson GS (2015) <a href="https://arxiv.org/abs/1611.07831">BICV book chapter</a>'
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, '1_B_protocol_recording.png')],
+[os.path.join(figpath_talk, '1_B_protocol_recording.svg')],
         title=title + ' - Eye Movements', height=s.meta['height']*.825) + bib,
 notes="""
 * This was shown to happen in the more  experimental setting While recording smooth pursuit eye movements : Anna Montagnini has previously shown that if you use a probabilistic bias in the direction of the movement of the target, the the eye will (uncousciously) anticipate in the direction of this bias.
@@ -438,7 +438,7 @@ Let's now have a look at the raw psychophysical results..
 
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, '1_C_protocol_bet.png')],
+[os.path.join(figpath_talk, '1_C_protocol_bet.svg')],
         title=title + ' - Rating scale', height=s.meta['height']*.825),
 notes="""
 
