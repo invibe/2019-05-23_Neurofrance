@@ -902,7 +902,7 @@ scatters plots are visually misleading as they do not show well the density of d
 """)
 
 tag = 'KDE'
-for mode, mode_txt in zip(['fixed', 'mean_fixed'], [' - Fixed window', ' - Full model']):
+for mode, mode_txt in zip(['leaky', 'mean_leaky'], [' - Leaky integrator', ' - BBCP']):
 # for mode in ['fixed', 'expectation']: #, 'max', modes: #
     s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, tag + '_' +  session + '_' + mode + '.svg') for session in ['bet', 'velo']],
