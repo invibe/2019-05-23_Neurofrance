@@ -880,7 +880,7 @@ compared to the raw results which were using the true (hidden) probability, it s
 as a result, the inferred probability as a function of time constitutes a useful regressor
     """)
 
-for txt in ['scatter_velocity_sigmo_fixed', 'scatter_velocity_sigmo_fixed', 'scatter_velocity_sigmo_mean']: # TODO : make a sequence to uncover parts
+for txt in ['scatter_velocity_sigmo_real', 'scatter_velocity_sigmo_fixed', 'scatter_velocity_sigmo_mean']: # TODO : make a sequence to uncover parts
     s.add_slide(content=s.content_figures(
 [os.path.join(figpath_talk, txt + '.svg')],
             title=title, height=s.meta['height']*.75) + url,
