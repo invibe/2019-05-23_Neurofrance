@@ -515,8 +515,9 @@ notes="""
 
 """)
 
-s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0_bet_EM.svg')],
+for fname in ['Experiment_block_0_bet_EM', 'Results_velocity_sigmo_0','Results_velocity_sigmo_1']:
+    s.add_slide(content=s.content_figures(
+    [os.path.join(figpath_talk, fname +  '.svg')],
         title=title + ' - Behaviour', height=s.meta['height']*.825) + url,
 notes="""
 
