@@ -815,7 +815,7 @@ notes="""
 # Let's now see how this applies to our experimental results by comparing human observers to our bayesian agent.
 # """)
 
-for fname in ['BCP_mean_leaky_0']:
+for fname in ['BCP_mean_0', 'BCP_leaky_0', 'BCP_mean_leaky_0']:
     s.add_slide(content=s.content_figures(
     [os.path.join(figpath_talk, fname + '.svg')],
             title=title + ' - Leaky vs BBCP', height=s.meta['height']*.825),

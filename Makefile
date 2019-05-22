@@ -25,7 +25,7 @@ get_figures:
 	rsync -a ../AnticipatorySPEM/figures/Result/{Results_velocity_sigmo_0,Results_velocity_sigmo_1,Results_BCP_velocity_sigmo_0,Results_BCP_velocity_sigmo_1,scatter_velocity_sigmo_leaky,scatter_velocity_sigmo_leaky,scatter_velocity_sigmo_mean,scatter_velocity_sigmo_fixed}.svg figures
 	# KDE
 	rsync -a ../AnticipatorySPEM/figures/BCP/KDE_{bet_mean_leaky,bet_leaky,velo_mean_leaky,velo_leaky}.svg figures
-	rsync -a ../AnticipatorySPEM/figures/BCP/{BCP_mean,BCP_mean_0,BCP_mean_leaky_0}.svg figures
+	rsync -a ../AnticipatorySPEM/figures/BCP/{BCP_mean,BCP_mean_0,BCP_mean_leaky_0,BCP_leaky_0}.svg figures
 
 show: html
 #	open -a firefox $(SRC).html
