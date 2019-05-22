@@ -518,7 +518,7 @@ notes="""
 for fname in ['Experiment_block_0_bet_EM', 'Results_velocity_sigmo_0','Results_velocity_sigmo_1']:
     s.add_slide(content=s.content_figures(
     [os.path.join(figpath_talk, fname +  '.svg')],
-        title=title + ' - Behaviour', height=s.meta['height']*.825) + url,
+        title=title, height=s.meta['height']*.825) + url,
 notes="""
 
 ... to make this clearer, and because we used the same sequence, we can overlay the results of both experiments in one plot:
