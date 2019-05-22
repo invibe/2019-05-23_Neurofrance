@@ -480,10 +480,12 @@ Let's now have a look at EMs...
 # """)
 
 
+url_ANEMO =  'full code @ <a href="https://github.com/invibe/ANEMO">github.com/invibe/ANEMO</a>'
+
 for txt in ['raw_trace', 'raw_fitted']: # 'raw_fit',
     s.add_slide(content=s.content_figures(
 [os.path.join(figpath_talk, txt + '.svg')],
-            title=title + ' - Fitting eye movements', height=s.meta['height']*.825) + url,
+            title=title + ' - Fitting eye movements', height=s.meta['height']*.825) + url_ANEMO,
    notes="""
 
 I show here a typical velocity traces for one subject / 2 trials
