@@ -644,7 +644,7 @@ s.add_slide(content="""
   Calculate Evidence $P(x_{0:t}) = \sum_{r_{t-1}} P (r_t, x_{0:t})$
 </li>
  <li>
-  Determine Run Length Distribution <font color="FF0000">$P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $<\font>
+  Determine Run Length Distribution <font color="FF0000"> $P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $ <\font>
 </li>
  <li>
   Update Sufficient Statistics :
@@ -658,7 +658,7 @@ s.add_slide(content="""
  </li>
   </ul>
  <li>
-  Perform Prediction <font color="FF0000">$P (x_{t+1} | x_{0:t}) = \sum_{r_t}  P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$<\font> for the next datum
+  Perform Prediction <font color="FF0000"> $P (x_{t+1} | x_{0:t}) = \sum_{r_t}  P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$ <\font> for the next datum
 </li>
  </ol>
  </ol>
