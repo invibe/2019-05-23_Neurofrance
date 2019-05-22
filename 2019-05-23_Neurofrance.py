@@ -673,48 +673,48 @@ notes="""
 
 """)
 
-tag = 'bcp_model_layer_' #  'model_bcp_'
-blobs = ["""
-Initialize $P(r_0=0)=1$ and  $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
-""","""
-Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{0:t}) =   P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$
-""","""
-Evaluate (likelihood) Predictive Probability $π_{0:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
-<br>
-Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{0:t}) = P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot (1−h))$
-<br>
-<font color="FF0000">Calculate Changepoint Probabilities $P(r_t=0, x_{0:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot h$
-</font>""","""
-Calculate Evidence $P(x_{0:t}) = \sum_{r_{t-1}} P (r_t, x_{0:t})$
-<br>
-Determine Run Length Distribution $P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $
-""","""
-Update Sufficient Statistics :
-<br>
-$ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
-<br>
-<font color="FF0000"> $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$ </font>
-
-"""]
-for txt, blob, notes_ in zip([str(i) for i in range(1, 6)], blobs, ["""
-* in this graph information will be represented at different nodes. each node represent a belief which takes the form of a probability distribution over the set of parameters that we wish to describe.
-* it can be the mean and variance of a gaussain, but in general it will be 2 parameters. in our case, we wish to estimate p (between zero and one) - it is characterized by the beta distribution (mathematically it is the conjugate of the bernouilli distribution)
-* (mathematically, we will use th family of exponenetial distributions:, gaussians, binomials) among which the beta distribution belongs
-First, we initialize the first node to prior values
-* at trial zero, there is no information, so we intiialize to the prior values
-""","""
-
-""","""
-
-""","""
-
-""","""
-
-"""]):
-    s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, tag + txt + '.png')],
-            title=title, height=s.meta['height']*.775)+blob,
-   notes=notes_)
+# tag = 'bcp_model_layer_' #  'model_bcp_'
+# blobs = ["""
+# Initialize $P(r_0=0)=1$ and  $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
+# ""","""
+# Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{0:t}) =   P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$
+# ""","""
+# Evaluate (likelihood) Predictive Probability $π_{0:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
+# <br>
+# Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{0:t}) = P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot (1−h))$
+# <br>
+# <font color="FF0000">Calculate Changepoint Probabilities $P(r_t=0, x_{0:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot h$
+# </font>""","""
+# Calculate Evidence $P(x_{0:t}) = \sum_{r_{t-1}} P (r_t, x_{0:t})$
+# <br>
+# Determine Run Length Distribution $P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $
+# ""","""
+# Update Sufficient Statistics :
+# <br>
+# $ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
+# <br>
+# <font color="FF0000"> $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$ </font>
+#
+# """]
+# for txt, blob, notes_ in zip([str(i) for i in range(1, 6)], blobs, ["""
+# * in this graph information will be represented at different nodes. each node represent a belief which takes the form of a probability distribution over the set of parameters that we wish to describe.
+# * it can be the mean and variance of a gaussain, but in general it will be 2 parameters. in our case, we wish to estimate p (between zero and one) - it is characterized by the beta distribution (mathematically it is the conjugate of the bernouilli distribution)
+# * (mathematically, we will use th family of exponenetial distributions:, gaussians, binomials) among which the beta distribution belongs
+# First, we initialize the first node to prior values
+# * at trial zero, there is no information, so we intiialize to the prior values
+# ""","""
+#
+# ""","""
+#
+# ""","""
+#
+# ""","""
+#
+# """]):
+#     s.add_slide(content=s.content_figures(
+# [os.path.join(figpath_talk, tag + txt + '.png')],
+#             title=title, height=s.meta['height']*.775)+blob,
+#    notes=notes_)
 
 #
 # modes = ['expectation', 'fixed', ] # 'max',  'expectation',#for mode in ['expectation']:#, 'max']:# for mode in ['expectation', 'max']:
@@ -815,7 +815,16 @@ First, we initialize the first node to prior values
 # Let's now see how this applies to our experimental results by comparing human observers to our bayesian agent.
 # """)
 
-#
+for fname in ['BCP_mean_leaky_0']:
+    s.add_slide(content=s.content_figures(
+    [os.path.join(figpath_talk, fname + '.svg')],
+            title=title + ' - Leaky vs BBCP', height=s.meta['height']*.825),
+    notes="""
+
+
+
+    """)
+#BCP_mean_leaky_0
 # for fname in ['BCP_mean']:
 #     s.add_slide(content=s.content_figures(
 #     [os.path.join(figpath_talk, fname + '.svg')],

@@ -829,15 +829,15 @@ URL = "http://arxiv.org/abs/0710.3742"
                 </aside>
                 
 </section>
-        <section><h3>Results:The Bayesian Changepoint Detector</h3>
+        <section><h3>Results:The Bayesian Changepoint Detector - Leaky vs BBCP</h3>
             <div align="center">
-            <table border=0px VALIGN="center" bgcolor=white height=775.0>
+            <table border=0px VALIGN="center" bgcolor=white height=825.0>
             
             <tr padding=0px style="vertical-align:middle" bgcolor=white>
             
-                <td height=775 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
+                <td height=825 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
                 <p>
-                    <img class="plain" data-src="figures/bcp_model_layer_1.png"  height="775px"   />
+                    <img class="plain" data-src="figures/BCP_mean_leaky_0.svg"  height="825px"   />
                 </p>
                 </td>
                 
@@ -846,121 +846,6 @@ URL = "http://arxiv.org/abs/0710.3742"
         </table>
         </div>
         
-Initialize $P(r_0=0)=1$ and  $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
-
-                <aside class="notes">
-                 <ul>
-<li>in this graph information will be represented at different nodes. each node represent a belief which takes the form of a probability distribution over the set of parameters that we wish to describe.</li>
-<li>it can be the mean and variance of a gaussain, but in general it will be 2 parameters. in our case, we wish to estimate p (between zero and one) - it is characterized by the beta distribution (mathematically it is the conjugate of the bernouilli distribution)</li>
-<li>(mathematically, we will use th family of exponenetial distributions:, gaussians, binomials) among which the beta distribution belongs
-First, we initialize the first node to prior values</li>
-<li>at trial zero, there is no information, so we intiialize to the prior values</li>
-</ul>
-                </aside>
-                
-</section>
-        <section><h3>Results:The Bayesian Changepoint Detector</h3>
-            <div align="center">
-            <table border=0px VALIGN="center" bgcolor=white height=775.0>
-            
-            <tr padding=0px style="vertical-align:middle" bgcolor=white>
-            
-                <td height=775 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
-                <p>
-                    <img class="plain" data-src="figures/bcp_model_layer_2.png"  height="775px"   />
-                </p>
-                </td>
-                
-            </tr>
-            
-        </table>
-        </div>
-        
-Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{0:t}) =   P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$
-
-                <aside class="notes">
-                 
-                </aside>
-                
-</section>
-        <section><h3>Results:The Bayesian Changepoint Detector</h3>
-            <div align="center">
-            <table border=0px VALIGN="center" bgcolor=white height=775.0>
-            
-            <tr padding=0px style="vertical-align:middle" bgcolor=white>
-            
-                <td height=775 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
-                <p>
-                    <img class="plain" data-src="figures/bcp_model_layer_3.png"  height="775px"   />
-                </p>
-                </td>
-                
-            </tr>
-            
-        </table>
-        </div>
-        
-Evaluate (likelihood) Predictive Probability $π_{0:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
-<br>
-Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{0:t}) = P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot (1−h))$
-<br>
-<font color="FF0000">Calculate Changepoint Probabilities $P(r_t=0, x_{0:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot h$
-</font>
-                <aside class="notes">
-                 
-                </aside>
-                
-</section>
-        <section><h3>Results:The Bayesian Changepoint Detector</h3>
-            <div align="center">
-            <table border=0px VALIGN="center" bgcolor=white height=775.0>
-            
-            <tr padding=0px style="vertical-align:middle" bgcolor=white>
-            
-                <td height=775 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
-                <p>
-                    <img class="plain" data-src="figures/bcp_model_layer_4.png"  height="775px"   />
-                </p>
-                </td>
-                
-            </tr>
-            
-        </table>
-        </div>
-        
-Calculate Evidence $P(x_{0:t}) = \sum_{r_{t-1}} P (r_t, x_{0:t})$
-<br>
-Determine Run Length Distribution $P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $
-
-                <aside class="notes">
-                 
-                </aside>
-                
-</section>
-        <section><h3>Results:The Bayesian Changepoint Detector</h3>
-            <div align="center">
-            <table border=0px VALIGN="center" bgcolor=white height=775.0>
-            
-            <tr padding=0px style="vertical-align:middle" bgcolor=white>
-            
-                <td height=775 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
-                <p>
-                    <img class="plain" data-src="figures/bcp_model_layer_5.png"  height="775px"   />
-                </p>
-                </td>
-                
-            </tr>
-            
-        </table>
-        </div>
-        
-Update Sufficient Statistics :
-<br>
-$ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
-<br>
-<font color="FF0000"> $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$ </font>
-
-
                 <aside class="notes">
                  
                 </aside>
