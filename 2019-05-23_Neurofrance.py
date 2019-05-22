@@ -644,7 +644,7 @@ s.add_slide(content="""
   Calculate Evidence $P(x_{0:t}) = \sum_{r_{t-1}} P (r_t, x_{0:t})$
 </li>
  <li>
-  Determine Run Length Distribution $<font color="FF0000">P (r_t | x_{0:t})<\font> = P (r_t, x_{0:t})/P (x_{0:t}) $
+  Determine Run Length Distribution <font color="FF0000">$P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $<\font>
 </li>
  <li>
   Update Sufficient Statistics :
