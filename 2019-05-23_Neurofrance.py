@@ -660,9 +660,6 @@ s.add_slide(content="""
  <li>
   Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
 </li>
- <li>
-  go to (2)
-</li>
  </ol>
  </ol>
         """, notes='', md=False)
