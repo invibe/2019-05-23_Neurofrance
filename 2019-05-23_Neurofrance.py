@@ -658,7 +658,7 @@ s.add_slide(content="""
  </li>
   </ul>
  <li>
-  Perform Prediction $P (x_{t+1} | x_{0:t}) =   P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$ for the next datum
+  Perform Prediction $P (x_{t+1} | x_{0:t}) = \sum_{r_t}  P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$ for the next datum
 </li>
  </ol>
  </ol>
