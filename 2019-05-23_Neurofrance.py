@@ -380,9 +380,9 @@ notes="""
 
 """)
 
-
-s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'Experiment_block_0.svg')],
+for fname in  ['Experiment_classique_4_blocks', 'Experiment_block_0']:
+    s.add_slide(content=s.content_figures(
+        [os.path.join(figpath_talk, fname + '.svg')],
         title=title + ' - Switching model', height=s.meta['height']*.825),
 notes="""
 
