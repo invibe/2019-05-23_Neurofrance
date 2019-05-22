@@ -673,7 +673,6 @@ notes="""
 
 """)
 
-
 tag = 'bcp_model_layer_' #  'model_bcp_'
 blobs = ["""
 Initialize $P(r_0=0)=1$ and  $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
@@ -694,7 +693,7 @@ Update Sufficient Statistics :
 <br>
 $ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
 <br>
-<font color="FF0000"> $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$</font>
+<font color="FF0000"> $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$ </font>
 
 """]
 for txt, blob, notes_ in zip([str(i) for i in range(1, 6)], blobs, ["""
