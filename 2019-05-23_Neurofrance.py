@@ -814,16 +814,16 @@ notes="""
 # Let's now see how this applies to our experimental results by comparing human observers to our bayesian agent.
 # """)
 
-
-for fname in ['BCP_mean']:
-    s.add_slide(content=s.content_figures(
-    [os.path.join(figpath_talk, fname + '.svg')],
-            title=title + ' - Compiling results', height=s.meta['height']*.825),
-    notes="""
-
-
-
-    """)
+#
+# for fname in ['BCP_mean']:
+#     s.add_slide(content=s.content_figures(
+#     [os.path.join(figpath_talk, fname + '.svg')],
+#             title=title + ' - Compiling results', height=s.meta['height']*.825),
+#     notes="""
+#
+#
+#
+#     """)
 
 
 s.close_section()
@@ -890,7 +890,7 @@ compared to the raw results which were using the true (hidden) probability, it s
 as a result, the inferred probability as a function of time constitutes a useful regressor
     """)
 
-for txt in ['scatter_velocity_sigmo_real', 'scatter_velocity_sigmo_fixed', 'scatter_velocity_sigmo_mean']: # TODO : make a sequence to uncover parts
+for txt in ['scatter_velocity_sigmo_real', 'scatter_velocity_sigmo_leaky', 'scatter_velocity_sigmo_mean']: # TODO : make a sequence to uncover parts
     s.add_slide(content=s.content_figures(
 [os.path.join(figpath_talk, txt + '.svg')],
             title=title, height=s.meta['height']*.75) + url,
@@ -906,7 +906,7 @@ scatters plots are visually misleading as they do not show well the density of d
 
 tag = 'KDE'
 for mode, mode_txt in zip(['leaky', 'mean_leaky'], [' - Leaky integrator', ' - BBCP']):
-# for mode in ['fixed', 'expectation']: #, 'max', modes: #
+# for mode in ['leaky', 'expectation']: #, 'max', modes: #
     s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, tag + '_' +  session + '_' + mode + '.svg') for session in ['bet', 'velo']],
                 title=title + mode_txt, height=s.meta['height']*.7, transpose=False, fragment=False),
@@ -916,7 +916,7 @@ we therefore used a kernel density estimation which clearly show the relationshi
 
 to summarize, we have shown that
 - there is a correlation in the anticiapatory response of eye movements in a volatile environment that is captured if we know the true probability
-- that a fixed length models captures some of this correlation, but that
+- that a leaky length models captures some of this correlation, but that
 - our online bayesian changep[oint model better captures this correlation and that this may hint at the neural mechanisms used to anticipate in a dynamic environment
 
 the brain is not strongly a bayesian machine, but weakly
