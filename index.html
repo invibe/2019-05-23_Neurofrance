@@ -753,6 +753,84 @@ URL = "http://arxiv.org/abs/0710.3742"
                 </aside>
                 
 </section>
+        <section>
+<h2>Bayesian Changepoint Detector</h2>
+
+<ol>
+<li> Initialize
+</li>
+ <ul>
+  <li>
+   $P(r_0=0)=1$ and
+ </li>
+  <li>
+   $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
+ </li>
+  </ul>
+ <li>
+   cycle over data:
+ </li>
+ <ol>
+ <li>
+    Observe New Datum $x_t$
+</li>
+ <li>
+  Evaluate Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
+</li>
+ <li>
+  Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{1:t}) = P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot (1−h)$
+</li>
+ <li>
+  Calculate Changepoint Probabilities $P(r_t=0, x_{1:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot h$
+</li>
+ <li>
+  Calculate Evidence $P(x_{1:t}) = \sum_{r_{t-1}} P (r_t, x_{1:t})$
+</li>
+ <li>
+  Determine Run Length Distribution $P (r_t | x_{1:t}) = P (r_t, x_{1:t})/P (x_{1:t}) $
+</li>
+ <li>
+  Update Sufficient Statistics :
+</li>
+ <ul>
+  <li>
+   $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$
+ </li>
+  <li>
+   $ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
+ </li>
+  </ul>
+ <li>
+  Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
+</li>
+ <li>
+  go to (2)
+</li>
+ </ol>
+        
+</section>
+        <section><h3>Results:The Bayesian Changepoint Detector</h3>
+            <div align="center">
+            <table border=0px VALIGN="center" bgcolor=white height=825.0>
+            
+            <tr padding=0px style="vertical-align:middle" bgcolor=white>
+            
+                <td height=825 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
+                <p>
+                    <img class="plain" data-src="figures/github.png"  height="825px"   />
+                </p>
+                </td>
+                
+            </tr>
+            
+        </table>
+        </div>
+        full code @ <a href="https://github.com/laurentperrinet/bayesianchangepoint">github.com/laurentperrinet/bayesianchangepoint</a>
+                <aside class="notes">
+                 
+                </aside>
+                
+</section>
         <section><h3>Results:The Bayesian Changepoint Detector</h3>
             <div align="center">
             <table border=0px VALIGN="center" bgcolor=white height=775.0>
@@ -885,80 +963,6 @@ $ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
 <font color="FF0000"> $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$</font>
 
 
-                <aside class="notes">
-                 
-                </aside>
-                
-</section>
-        <section>
-<h2>Bayesian Changepoint Detector</h2>
-
-<ol>
-<li> Initialize
-</li>
- <ul>
-  <li>
-   $P(r_0=0)=1$ and
- </li>
-  <li>
-   $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
- </li>
-  </ul>
- <li>
- Observe New Datum $x_t$
-</li>
- <li>
-  Evaluate Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
-</li>
- <li>
-  Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{1:t}) = P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot (1−H(r^{(r)}_{t-1}))$
-</li>
- <li>
-  Calculate Changepoint Probabilities $P(r_t=0, x_{1:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot H(r^{(r)}_{t-1})$
-</li>
- <li>
-  Calculate Evidence $P(x_{1:t}) = \sum_{r_{t-1}} P (r_t, x_{1:t})$
-</li>
- <li>
-  Determine Run Length Distribution $P (r_t | x_{1:t}) = P (r_t, x_{1:t})/P (x_{1:t}) $
-</li>
- <li>
-  Update Sufficient Statistics :
-</li>
- <ul>
-  <li>
-   $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$
- </li>
-  <li>
-   $ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
- </li>
-  </ul>
- <li>
-  Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
-</li>
- <li>
-  go to (2)
-</li>
- </ol>
-        
-</section>
-        <section><h3>Results:The Bayesian Changepoint Detector</h3>
-            <div align="center">
-            <table border=0px VALIGN="center" bgcolor=white height=825.0>
-            
-            <tr padding=0px style="vertical-align:middle" bgcolor=white>
-            
-                <td height=825 width="1600" padding-top=0px padding-bottom=0px style="text-align:center; vertical-align:middle" bgcolor="white" >
-                <p>
-                    <img class="plain" data-src="figures/github.png"  height="825px"   />
-                </p>
-                </td>
-                
-            </tr>
-            
-        </table>
-        </div>
-        full code @ <a href="https://github.com/laurentperrinet/bayesianchangepoint">github.com/laurentperrinet/bayesianchangepoint</a>
                 <aside class="notes">
                  
                 </aside>

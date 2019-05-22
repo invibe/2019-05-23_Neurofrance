@@ -608,6 +608,73 @@ URL = "http://arxiv.org/abs/0710.3742"
 * full code @ https://github.com/laurentperrinet/bayesianchangepoint
 
 """, notes='<br><a href="http://arxiv.org/abs/0710.3742">Adams &amp; MacKay 2007 "Bayesian Online Changepoint Detection</a>', md=True)
+# https://raw.githubusercontent.com/laurentperrinet/bayesianchangepoint/master/README.md
+
+s.add_slide(content="""
+<h2>Bayesian Changepoint Detector</h2>
+
+<ol>
+<li> Initialize
+</li>
+ <ul>
+  <li>
+   $P(r_0=0)=1$ and
+ </li>
+  <li>
+   $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
+ </li>
+  </ul>
+ <li>
+   cycle over data:
+ </li>
+ <ol>
+ <li>
+    Observe New Datum $x_t$
+</li>
+ <li>
+  Evaluate Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
+</li>
+ <li>
+  Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{1:t}) = P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot (1−h)$
+</li>
+ <li>
+  Calculate Changepoint Probabilities $P(r_t=0, x_{1:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot h$
+</li>
+ <li>
+  Calculate Evidence $P(x_{1:t}) = \sum_{r_{t-1}} P (r_t, x_{1:t})$
+</li>
+ <li>
+  Determine Run Length Distribution $P (r_t | x_{1:t}) = P (r_t, x_{1:t})/P (x_{1:t}) $
+</li>
+ <li>
+  Update Sufficient Statistics :
+</li>
+ <ul>
+  <li>
+   $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$
+ </li>
+  <li>
+   $ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
+ </li>
+  </ul>
+ <li>
+  Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
+</li>
+ <li>
+  go to (2)
+</li>
+ </ol>
+        """, notes='', md=False)
+
+url =  'full code @ <a href="https://github.com/laurentperrinet/bayesianchangepoint">github.com/laurentperrinet/bayesianchangepoint</a>'
+
+s.add_slide(content=s.content_figures(
+[os.path.join(figpath_talk, 'github.png')],
+        title=title, height=s.meta['height']*.825) + url,
+notes="""
+
+""")
+
 
 tag = 'bcp_model_layer_' #  'model_bcp_'
 blobs = ["""
@@ -652,68 +719,6 @@ First, we initialize the first node to prior values
             title=title, height=s.meta['height']*.775)+blob,
    notes=notes_)
 
-# https://raw.githubusercontent.com/laurentperrinet/bayesianchangepoint/master/README.md
-
-s.add_slide(content="""
-<h2>Bayesian Changepoint Detector</h2>
-
-<ol>
-<li> Initialize
-</li>
- <ul>
-  <li>
-   $P(r_0=0)=1$ and
- </li>
-  <li>
-   $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
- </li>
-  </ul>
- <li>
- Observe New Datum $x_t$
-</li>
- <li>
-  Evaluate Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
-</li>
- <li>
-  Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{1:t}) = P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot (1−H(r^{(r)}_{t-1}))$
-</li>
- <li>
-  Calculate Changepoint Probabilities $P(r_t=0, x_{1:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot H(r^{(r)}_{t-1})$
-</li>
- <li>
-  Calculate Evidence $P(x_{1:t}) = \sum_{r_{t-1}} P (r_t, x_{1:t})$
-</li>
- <li>
-  Determine Run Length Distribution $P (r_t | x_{1:t}) = P (r_t, x_{1:t})/P (x_{1:t}) $
-</li>
- <li>
-  Update Sufficient Statistics :
-</li>
- <ul>
-  <li>
-   $ν^{(0)}_{t+1} = ν_{prior}$, $χ^{(0)}_{t+1} = χ_{prior}$
- </li>
-  <li>
-   $ν^{(r+1)}_{t+1} = ν^{(r)}_{t} +1$, $χ^{(r+1)}_{t+1} = χ^{(r)}_{t} + u(x_t)$
- </li>
-  </ul>
- <li>
-  Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
-</li>
- <li>
-  go to (2)
-</li>
- </ol>
-        """, notes='', md=False)
-
-url =  'full code @ <a href="https://github.com/laurentperrinet/bayesianchangepoint">github.com/laurentperrinet/bayesianchangepoint</a>'
-
-s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'github.png')],
-        title=title, height=s.meta['height']*.825) + url,
-notes="""
-
-""")
 #
 # modes = ['expectation', 'fixed', ] # 'max',  'expectation',#for mode in ['expectation']:#, 'max']:# for mode in ['expectation', 'max']:
 # for mode, mode_txt in zip(['expectation', 'fixed', ], [' - Full model', ' - Fixed window', ]):
