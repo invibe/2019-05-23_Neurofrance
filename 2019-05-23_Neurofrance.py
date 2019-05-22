@@ -664,6 +664,7 @@ s.add_slide(content="""
   go to (2)
 </li>
  </ol>
+ </ol>
         """, notes='', md=False)
 
 url =  'full code @ <a href="https://github.com/laurentperrinet/bayesianchangepoint">github.com/laurentperrinet/bayesianchangepoint</a>'
