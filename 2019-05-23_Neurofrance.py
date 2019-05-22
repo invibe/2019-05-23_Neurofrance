@@ -625,26 +625,26 @@ s.add_slide(content="""
  </li>
   </ul>
  <li>
-   cycle over data:
+   cycle over data from $t=0$ until $t=T-1$:
  </li>
  <ol>
  <li>
     Observe New Datum $x_t$
 </li>
  <li>
-  Evaluate Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
+  Evaluate Predictive Probability $π_{0:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
 </li>
  <li>
-  Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{1:t}) = P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot (1−h)$
+  Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{0:t}) = P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot (1−h)$
 </li>
  <li>
-  Calculate Changepoint Probabilities $P(r_t=0, x_{1:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot h$
+  Calculate Changepoint Probabilities $P(r_t=0, x_{0:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot h$
 </li>
  <li>
-  Calculate Evidence $P(x_{1:t}) = \sum_{r_{t-1}} P (r_t, x_{1:t})$
+  Calculate Evidence $P(x_{0:t}) = \sum_{r_{t-1}} P (r_t, x_{0:t})$
 </li>
  <li>
-  Determine Run Length Distribution $P (r_t | x_{1:t}) = P (r_t, x_{1:t})/P (x_{1:t}) $
+  Determine Run Length Distribution $P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $
 </li>
  <li>
   Update Sufficient Statistics :
@@ -658,7 +658,7 @@ s.add_slide(content="""
  </li>
   </ul>
  <li>
-  Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$ for the next datum
+  Perform Prediction $P (x_{t+1} | x_{0:t}) =   P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$ for the next datum
 </li>
  </ol>
  </ol>
@@ -678,17 +678,17 @@ tag = 'bcp_model_layer_' #  'model_bcp_'
 blobs = ["""
 Initialize $P(r_0=0)=1$ and  $ν^{(0)}_1 = ν_{prior}$ and $χ^{(0)}_1 = χ_{prior}$
 ""","""
-Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{1:t}) =   P (x_{t+1}|x_{1:t} , r_t) \cdot P (r_t|x_{1:t})$
+Observe New Datum $x_t$  and   Perform Prediction $P (x_{t+1} | x_{0:t}) =   P (x_{t+1}|x_{0:t} , r_t) \cdot P (r_t|x_{0:t})$
 ""","""
-Evaluate (likelihood) Predictive Probability $π_{1:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
+Evaluate (likelihood) Predictive Probability $π_{0:t} = P(x_t |ν^{(r)}_t,χ^{(r)}_t)$
 <br>
-Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{1:t}) = P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot (1−h))$
+Calculate Growth Probabilities $P(r_t=r_{t-1}+1, x_{0:t}) = P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot (1−h))$
 <br>
-<font color="FF0000">Calculate Changepoint Probabilities $P(r_t=0, x_{1:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{1:t-1}) \cdot π^{(r)}_t \cdot h$
+<font color="FF0000">Calculate Changepoint Probabilities $P(r_t=0, x_{0:t})= \sum_{r_{t-1}} P(r_{t-1}, x_{0:t-1}) \cdot π^{(r)}_t \cdot h$
 </font>""","""
-Calculate Evidence $P(x_{1:t}) = \sum_{r_{t-1}} P (r_t, x_{1:t})$
+Calculate Evidence $P(x_{0:t}) = \sum_{r_{t-1}} P (r_t, x_{0:t})$
 <br>
-Determine Run Length Distribution $P (r_t | x_{1:t}) = P (r_t, x_{1:t})/P (x_{1:t}) $
+Determine Run Length Distribution $P (r_t | x_{0:t}) = P (r_t, x_{0:t})/P (x_{0:t}) $
 ""","""
 Update Sufficient Statistics :
 <br>
