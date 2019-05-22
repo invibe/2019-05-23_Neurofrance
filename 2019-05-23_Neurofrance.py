@@ -436,7 +436,6 @@ Let's now have a look at the raw psychophysical results..
 
 """)
 
-
 s.add_slide(content=s.content_figures(
 [os.path.join(figpath_talk, '1_C_protocol_bet.png')],
         title=title + ' - Rating scale', height=s.meta['height']*.825),
