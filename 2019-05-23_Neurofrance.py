@@ -527,6 +527,7 @@ which qualitatively confirms such an intuition...
 
 """)
 
+
 for txt in ['scatter_velocity_sigmo_real']:#, 'p_bet--v_a']: # TODO : make a sequence to uncover parts
     s.add_slide(content=s.content_figures(
 [os.path.join(figpath_talk, txt + '.svg')],
